@@ -3,27 +3,37 @@ import { IDB } from "../../interfaces/IDB"
 config()
 
 class DBCredentials {
-    private host: string | null
-    private port: string | null
-    private user: string | null
-    private dbName: string | null
-    private password: string | null
+    private _host: string | null
+    private _port: string | null
+    private _user: string | null
+    private _dbName: string | null
+    private _password: string | null
     
     constructor() {
-        this.host = process.env.DB_HOST || null
-        this.port = process.env.DB_PORT || null
-        this.user = process.env.DB_USER || null
-        this.dbName = process.env.DB_NAME || null
-        this.password = process.env.DB_PASSWORD || null
+        this._host = process.env.DB_HOST || null
+        this._port = process.env.DB_PORT || null
+        this._user = process.env.DB_USER || null
+        this._dbName = process.env.DB_NAME || null
+        this._password = process.env.DB_PASSWORD || null
     }
 
-    // connect briefly to DB, just to validate creds working ok
-    private validate(engine: IDB) {
-        engine.connect()
+    public get host(): string | null {
+        return this._host
     }
 
-    getCredentials() {
-        // if connection ok return creds
-        // else quit app
+    public get port(): string | null {
+        return this._port
+    }
+
+    public get user(): string | null {
+        return this._user
+    }
+
+    public get dbName(): string | null {
+        return this._dbName
+    }
+    
+    public get password(): string | null {
+        return this._password
     }
 }
