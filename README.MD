@@ -7,3 +7,5 @@ DB_PORT: (80/etc)
 DB_USER: (postgres/etc)
 DB_PASSWORD: (x)
 DB_NAME: (users/customers/etc)
+
+this orm automatically creates a connection pool, so you don't have to be connecting and disconnecting your db instance whenever you want to use your models.
