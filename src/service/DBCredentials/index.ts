@@ -3,37 +3,37 @@ import { IDB } from "../../interfaces/IDB"
 config()
 
 class DBCredentials {
-    private _host: string | null
-    private _port: string | null
-    private _user: string | null
-    private _dbName: string | null
-    private _password: string | null
+    private _host: string | undefined
+    private _port: string | undefined
+    private _user: string | undefined
+    private _dbName: string | undefined
+    private _password: string | undefined
     
     constructor() {
-        this._host = process.env.DB_HOST || null
-        this._port = process.env.DB_PORT || null
-        this._user = process.env.DB_USER || null
-        this._dbName = process.env.DB_NAME || null
-        this._password = process.env.DB_PASSWORD || null
+        this._host = process.env.DB_HOST || undefined
+        this._port = process.env.DB_PORT || undefined
+        this._user = process.env.DB_USER || undefined
+        this._dbName = process.env.DB_NAME || undefined
+        this._password = process.env.DB_PASSWORD || undefined
     }
 
-    public get host(): string | null {
+    public get host(): string | undefined {
         return this._host
     }
 
-    public get port(): string | null {
+    public get port(): string | undefined {
         return this._port
     }
 
-    public get user(): string | null {
+    public get user(): string | undefined {
         return this._user
     }
 
-    public get dbName(): string | null {
+    public get dbName(): string | undefined {
         return this._dbName
     }
-    
-    public get password(): string | null {
+
+    public get password(): string | undefined {
         return this._password
     }
 }
